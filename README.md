@@ -1,35 +1,45 @@
 # Image Search Application Documentation
 
 ## Problem Statement
-
-The task is to create an image search application using React. The application should allow users to search for images using the Unsplash API, view details of a selected image, and navigate between pages of search results. The application should be responsive, using core CSS for styling with standard breakpoints for mobile, tablet, and desktop. It should utilize reusable components and provide production-level code with proper naming conventions. Additionally, the application should implement error handling and routing, and be deployed on Netlify.
+The objective of this project is to create a responsive image search application using React. The application allows users to search for images using the Unsplash API, view image details, and navigate through pages of search results. The app includes the following key features:
+1. Home page to display images based on search queries.
+2. Image details page to show more information about a selected image.
+3. Pagination to navigate through multiple pages of search results.
+4. Error handling using Sentry for monitoring and logging errors.
 
 ## Dependencies
+The project uses several dependencies, each chosen for specific purposes to enhance the development experience and functionality of the application.
 
-### 1. React
-- **Purpose**: React is used to build the user interface of the application. It allows for the creation of reusable components and the management of state and props.
-- **Usage**: The entire application is built using React components, with state management and props being passed between components to manage data flow.
+### Dependencies Used
+1. **React**: The core library for building the user interface.
+   - **Why**: React provides a component-based structure that makes it easier to build and manage complex user interfaces.
 
-### 2. @mui/material
-- **Purpose**: MUI (Material-UI) is a popular React UI framework that provides a comprehensive set of components following the Material Design guidelines.
-- **Usage**: Used for implementing UI components like `TextField`, `Card`, `Pagination`, and theming the application.
+2. **@mui/material**: Material-UI, a popular React UI framework.
+   - **Why**: Provides a comprehensive set of components that follow Material Design guidelines, making it easier to create a consistent and professional-looking UI.
 
-### 3. @emotion/react and @emotion/styled
-- **Purpose**: These libraries are used alongside MUI for styling components using a CSS-in-JS approach.
-- **Usage**: Used to style MUI components and create custom styles that are scoped to components.
+3. **@emotion/react & @emotion/styled**: Libraries for styling components.
+   - **Why**: These are used in conjunction with Material-UI to style components effectively.
 
-### 4. Axios
-- **Purpose**: Axios is a promise-based HTTP client for making API requests.
-- **Usage**: Used to fetch data from the Unsplash API, including searching for images and fetching image details.
+4. **axios**: A promise-based HTTP client for making API requests.
+   - **Why**: Simplifies the process of making HTTP requests to fetch data from APIs.
 
-### 5. React Router DOM
-- **Purpose**: React Router is used for routing in React applications.
-- **Usage**: Used to implement navigation between the home page and the image details page.
+5. **react-router-dom**: Provides routing capabilities for React applications.
+   - **Why**: Essential for handling navigation within the app, allowing users to move between different pages (home and image details).
+
+6. **sentry/react**: Sentry integration for React applications.
+   - **Why**: Provides error tracking and monitoring, helping to identify and fix issues in production.
+
+### Development Dependencies
+1. **@testing-library/react**: Utilities for testing React components.
+   - **Why**: Ensures that the components function correctly through unit tests.
+
+2. **eslint**: A tool for identifying and fixing linting issues in the codebase.
+   - **Why**: Helps maintain code quality and consistency.
 
 ## Implementation Details
 
 ### Project Structure
-The project is organized as follows to ensure maintainability and reusability:
+The project is organized into several directories to ensure a clean and maintainable codebase:
 
 ```
 src/
@@ -49,60 +59,45 @@ src/
 |-- styles.css
 ```
 
-### Components
+### Key Features
+1. **Home Page**: 
+   - Displays a list of images based on the search query.
+   - Includes a search bar to input search terms.
+   - Uses pagination to navigate through pages of results.
 
-#### SearchBar
-- **File**: `src/components/SearchBar.js`
-- **Purpose**: A reusable component that renders a search input field using MUI's `TextField`.
+2. **Image Details Page**:
+   - Displays detailed information about a selected image.
+   - Provides a back button to return to the home page.
 
-#### ImageCard
-- **File**: `src/components/ImageCard.js`
-- **Purpose**: A reusable component that displays an image with its description, using MUI's `Card`, `CardMedia`, and `CardContent`.
+3. **API Integration**:
+   - The Unsplash API is used to fetch images and their details.
+   - Axios is used for making HTTP requests.
 
-#### ImageList
-- **File**: `src/components/ImageList.js`
-- **Purpose**: A reusable component that renders a list of `ImageCard` components in a responsive grid layout using MUI's `Grid`.
+4. **Theming and Styling**:
+   - A custom theme is created using Material-UI's theming capabilities.
+   - Responsive design is implemented using core CSS with standard breakpoints.
 
-#### Pagination
-- **File**: `src/components/Pagination.js`
-- **Purpose**: A reusable pagination component using MUI's `Pagination` to navigate between pages of search results.
+5. **Routing**:
+   - React Router is used to handle navigation between the home page and the image details page.
 
-### Pages
+6. **Error Handling**:
+   - Sentry is integrated for tracking and handling errors in the application.
 
-#### Home
-- **File**: `src/pages/Home.js`
-- **Purpose**: The main page of the application where users can search for images and view search results. It includes the `SearchBar`, `ImageList`, and `Pagination` components.
+### Steps for Deployment
+1. **Create Repository**:
+   ```sh
+   git init
+   git add .
+   git commit -m "Image search"
+   git remote add origin YOUR_GIT_REPO_URL
+   git push -u origin master
+   ```
 
-#### ImageDetails
-- **File**: `src/pages/ImageDetails.js`
-- **Purpose**: The page that displays details of a selected image. It includes an image, its description, and a back button to return to the home page.
+2. **Deploy to Netlify**:
+   - Go to [Netlify](https://www.netlify.com/).
+   - Create a new site from Git.
+   - Connect your repository.
+   - Deploy the site.
 
-### Services
-
-#### API
-- **File**: `src/services/api.js`
-- **Purpose**: Contains functions to interact with the Unsplash API using Axios.
-
-### Theming
-
-#### Theme
-- **File**: `src/theme.js`
-- **Purpose**: Defines a custom theme using MUI's `createTheme` to manage typography and other style settings.
-
-### Styling
-
-#### CSS
-- **File**: `src/styles.css`
-- **Purpose**: Provides responsive styles for different breakpoints (mobile, tablet, desktop) using core CSS.
-
-### Routing
-
-- **File**: `src/App.js`
-- **Purpose**: Configures routing using React Router to navigate between the home page and the image details page.
-
-### Error Handling
-- Implemented error handling in API service functions and component logic to manage and display errors appropriately.
-
-### Deployment
-1. **Repository Creation**: The project is initialized as a Git repository and pushed to a remote repository (e.g., GitHub).
-2. **Netlify Deployment**: The application is deployed on Netlify by connecting the Git repository and following the deployment steps on the Netlify platform.
+### URL
+The deployed application can be accessed at [https://imagesearch-scalaix.netlify.app/](scalaix_TestCase).
