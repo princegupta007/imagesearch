@@ -100,4 +100,4 @@ src/
    - Deploy the site.
 
 ### URL
-The deployed application can be accessed at [https://imagesearch-scalaix.netlify.app/](scalaix_TestCase).
+The deployed application can be accessed at [https://imagesearch-scalaix.netlify.app/](https://imagesearch-scalaix.netlify.app/).
