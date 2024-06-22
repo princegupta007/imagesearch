@@ -1,0 +1,25 @@
+body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  @media (max-width: 600px) {
+    .MuiContainer-root {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  
+  @media (min-width: 600px) and (max-width: 900px) {
+    .MuiContainer-root {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .MuiContainer-root {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+  
